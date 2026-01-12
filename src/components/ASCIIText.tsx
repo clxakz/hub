@@ -420,7 +420,7 @@ class CanvAscii {
 
 		(this.mesh.material as THREE.ShaderMaterial).uniforms.uTime.value = Math.sin(time);
 
-		// this.mesh.lookAt(this.camera.position); // <- this shit is buggin me
+		this.mesh.lookAt(this.camera.position); // <- this shit is buggin me
 
 		this.updateRotation();
 		this.filter.render(this.scene, this.camera);

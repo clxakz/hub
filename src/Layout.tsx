@@ -43,14 +43,14 @@ export default function Layout() {
 					times: [0, 0.5, 0.8, 1],
 					ease: "easeInOut",
 				}}
-				className="absolute inset-0 z-50"
+				className="absolute inset-0 z-50 bg-black"
 			>
 				<ASCIIText
 					enableWaves
 					planeBaseHeight={5}
 					textFontSize={IntroTextSize.FontSize}
 					asciiFontSize={IntroTextSize.AsciiSize}
-					text="clxakz"
+					text="clxakzy"
 				/>
 			</motion.div>
 
@@ -74,7 +74,7 @@ export default function Layout() {
 					initial={{ scale: 0.4, y: -200 }}
 					animate={{ scale: 1, y: 0 }}
 					transition={{ delay: 3.3, type: "spring", stiffness: 30, damping: 7 }}
-					className="flex flex-col items-center justify-center pt-10"
+					className="flex flex-col items-center justify-center pt-10 select-none"
 				>
 					<Avatar className="size-20">
 						<AvatarImage src={Yeat} alt="pfp" />
@@ -100,8 +100,8 @@ export default function Layout() {
 function LinkItem({ children, icon, url, index }: { children: ReactNode; icon: string; url: string; index: number }) {
 	return (
 		<motion.a
-			initial={{ opacity: 0, scale: 0 }}
-			animate={{ opacity: 1, scale: 1 }}
+			initial={{ opacity: 0, scale: 0, y: 100 }}
+			animate={{ opacity: 1, scale: 1, y: 0 }}
 			transition={{ delay: 3.5 + index * 0.2, type: "spring", stiffness: 30, damping: 9 }}
 			href={url}
 			target="_blank"
