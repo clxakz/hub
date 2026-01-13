@@ -12,10 +12,6 @@ import soundcloud from "./assets/soundcloud.svg";
 // import tiktok from "./assets/tiktok.svg";
 import discord from "./assets/discord.svg";
 import { ChevronRight } from "lucide-react";
-// import PrismaticBurst from "./components/PrismaticBurst.tsx";
-// import Galaxy from "./components/Galaxy.tsx";
-// import FaultyTerminal from "./components/FaultyTerminal.tsx";
-import GridMotion from "./components/GridMotion.tsx";
 
 export default function Layout() {
 	const isMobile = useIsMobile();
@@ -38,24 +34,38 @@ export default function Layout() {
 		{ title: "Discord", icon: discord, url: "discord://-/users/609106426341621781" },
 	];
 
-	const items = [
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat1.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat2.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat3.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat4.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat5.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat6.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat7.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat8.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat9.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat10.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat11.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat12.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat13.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat14.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat15.png",
-		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat16.png",
-	];
+	// const items = [
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat1.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat2.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat3.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat4.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat5.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat6.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat7.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat8.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat9.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat10.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat11.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat12.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat13.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat14.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat15.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat16.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat17.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat18.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat19.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat20.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat21.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat22.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat6.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat7.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat8.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat9.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat14.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat15.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat16.png",
+	// 	"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat17.png",
+	// ];
 
 	useEffect(() => {
 		if (!sessionStorage.getItem("first-load-reloaded")) {
@@ -90,9 +100,22 @@ export default function Layout() {
 				initial={{ opacity: 0, filter: "blur(10px)" }}
 				animate={{ opacity: 1, filter: "blur(0px)" }}
 				transition={{ delay: 3, duration: 1.5, ease: "easeIn" }}
-				className="absolute inset-0"
+				className="absolute inset-0 z-40"
 			>
-				{isMobile ? <Beams rotation={35} /> : <GridMotion items={items} />}
+				{isMobile ? (
+					<Beams rotation={35} />
+				) : (
+					<Beams
+						beamWidth={1.5}
+						beamHeight={18}
+						beamNumber={7}
+						lightColor="#c5bdea"
+						speed={3}
+						noiseIntensity={2}
+						scale={0.2}
+						rotation={35}
+					/>
+				)}
 			</motion.div>
 
 			<motion.div
@@ -100,7 +123,7 @@ export default function Layout() {
 				initial={{ opacity: 0, rotateX: 35, y: "100%", filter: "blur(10px)", scale: 1 }}
 				animate={{ opacity: 1, rotateX: 0, y: 0, filter: "blur(0px)", scale: 1 }}
 				transition={{ delay: 3, type: "spring", stiffness: 20, damping: 7, when: "beforeChildren", delayChildren: 100 }}
-				className="absolute overflow-hidden z-100 flex flex-col *:border-red-500/0 *:border p-2 border shadow-lg backdrop-brightness-100 rounded-xl backdrop-blur-lg"
+				className="absolute overflow-hidden z-50 flex flex-col *:border-red-500/0 *:border p-2 border shadow-lg backdrop-brightness-100 rounded-xl backdrop-blur-lg"
 			>
 				<motion.section
 					initial={{ scale: 0.4, y: -200 }}
@@ -117,7 +140,7 @@ export default function Layout() {
 					<ShinyText text="software engineer" />
 				</motion.section>
 
-				<motion.section className="grid grid-cols-1 gap-1 mt-auto sm:grid-cols-2 select-none">
+				<motion.section className="grid grid-cols-1 gap-1 mt-auto sm:grid-cols-2 select-none z-60">
 					{Links.map((link, index) => (
 						<LinkItem key={link.title} index={index} icon={link.icon} url={link.url}>
 							{link.title}
@@ -137,7 +160,7 @@ function LinkItem({ children, icon, url, index }: { children: ReactNode; icon: s
 			transition={{ delay: 3.5 + index * 0.2, type: "spring", stiffness: 30, damping: 9 }}
 			href={url}
 			target="_blank"
-			className="flex items-center flex-1 gap-2 px-5 py-4 border shadow-lg group bg-white/2 backdrop-brightness-100 rounded-xl backdrop-blur-lg"
+			className="flex items-center flex-1 gap-2 px-5 py-4 border shadow-lg group bg-linear-to-t from-white/5 via-transparent to-transparent backdrop-brightness-100 rounded-xl backdrop-blur-2xl"
 		>
 			<img src={icon} className="size-6.5 invert" />
 			<p className="mb-0.5 text-xl leading-0">{children}</p>
