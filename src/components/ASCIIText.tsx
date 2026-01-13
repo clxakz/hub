@@ -1,3 +1,5 @@
+// Component ported and enhanced from https://codepen.io/JuanFuentes/pen/eYEeoyE
+
 import { useRef, useEffect } from "react";
 import * as THREE from "three";
 
@@ -320,7 +322,10 @@ class CanvAscii {
 		this.camera.position.z = 30;
 
 		this.scene = new THREE.Scene();
-		this.mouse = { x: 0, y: 0 };
+		this.mouse = {
+			x: this.width / 2,
+			y: this.height / 2,
+		};
 
 		this.onMouseMove = this.onMouseMove.bind(this);
 
@@ -419,8 +424,6 @@ class CanvAscii {
 		this.texture.needsUpdate = true;
 
 		(this.mesh.material as THREE.ShaderMaterial).uniforms.uTime.value = Math.sin(time);
-
-		this.mesh.lookAt(this.camera.position); // <- this shit is buggin me
 
 		this.updateRotation();
 		this.filter.render(this.scene, this.camera);

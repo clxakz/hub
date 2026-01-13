@@ -1,11 +1,11 @@
 import Beams from "./components/Beams";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 import Yeat from "./assets/yeat.png";
-import ASCIIText from "./components/ASCIIText";
+import ASCIIText from "./components/ASCIIText.tsx";
 import { motion } from "motion/react";
 import useIsMobile from "./hooks/useIsMobile";
 import ShinyText from "./components/ShinyText";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import github from "./assets/github.svg";
 import instagram from "./assets/instagram.svg";
 import soundcloud from "./assets/soundcloud.svg";
@@ -32,6 +32,13 @@ export default function Layout() {
 		{ title: "TikTok", icon: tiktok, url: "https://www.tiktok.com/@clxakz" },
 	];
 
+	useEffect(() => {
+		if (!sessionStorage.getItem("first-load-reloaded")) {
+			sessionStorage.setItem("first-load-reloaded", "true");
+			window.location.reload();
+		}
+	}, []);
+
 	return (
 		<div className="relative flex items-center justify-center w-screen h-screen perspective-midrange">
 			<motion.div
@@ -43,15 +50,17 @@ export default function Layout() {
 					times: [0, 0.5, 0.8, 1],
 					ease: "easeInOut",
 				}}
-				className="absolute inset-0 z-50 bg-black"
+				className="absolute inset-0 z-100"
 			>
 				<ASCIIText
 					enableWaves
 					planeBaseHeight={5}
 					textFontSize={IntroTextSize.FontSize}
 					asciiFontSize={IntroTextSize.AsciiSize}
-					text="clxakzy"
+					text="clxakz"
 				/>
+
+				{/* <h1 className="custom-font text-9xl">Clxakz</h1> */}
 			</motion.div>
 
 			<motion.div
@@ -68,7 +77,7 @@ export default function Layout() {
 				initial={{ opacity: 0, rotateX: 35, y: "100%", filter: "blur(10px)", scale: 1 }}
 				animate={{ opacity: 1, rotateX: 0, y: 0, filter: "blur(0px)", scale: 1 }}
 				transition={{ delay: 3, type: "spring", stiffness: 20, damping: 7, when: "beforeChildren", delayChildren: 100 }}
-				className="absolute overflow-hidden z-100 flex flex-col bg-white/2 *:border-red-500/0 *:border p-2 border shadow-lg backdrop-brightness-100 rounded-xl backdrop-blur-lg"
+				className="absolute overflow-hidden z-100 flex flex-col *:border-red-500/0 *:border p-2 border shadow-lg backdrop-brightness-100 rounded-xl backdrop-blur-lg"
 			>
 				<motion.section
 					initial={{ scale: 0.4, y: -200 }}
@@ -85,7 +94,7 @@ export default function Layout() {
 					<ShinyText text="software engineer" />
 				</motion.section>
 
-				<motion.section className="grid grid-cols-1 gap-1 mt-auto sm:grid-cols-2">
+				<motion.section className="grid grid-cols-1 gap-1 mt-auto sm:grid-cols-2 select-none">
 					{Links.map((link, index) => (
 						<LinkItem key={link.title} index={index} icon={link.icon} url={link.url}>
 							{link.title}

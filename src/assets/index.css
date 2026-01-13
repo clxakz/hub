@@ -121,3 +121,15 @@
 		@apply overflow-hidden bg-black text-foreground;
 	}
 }
+
+/* @font-face {
+	font-family: "Chandia";
+	src: url("/Chandia_PERSONAL_USE_ONLY.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.custom-font {
+	font-family: "Chandia", system-ui, sans-serif;
+} */
