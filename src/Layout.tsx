@@ -9,7 +9,8 @@ import { useEffect, type ReactNode } from "react";
 import github from "./assets/github.svg";
 import instagram from "./assets/instagram.svg";
 import soundcloud from "./assets/soundcloud.svg";
-import tiktok from "./assets/tiktok.svg";
+// import tiktok from "./assets/tiktok.svg";
+import discord from "./assets/discord.svg";
 import { ChevronRight } from "lucide-react";
 
 export default function Layout() {
@@ -29,7 +30,8 @@ export default function Layout() {
 		{ title: "Instagram", icon: instagram, url: "https://instagram.com/clxakz.movie" },
 		{ title: "Github", icon: github, url: "https://github.com/clxakz" },
 		{ title: "SoundCloud", icon: soundcloud, url: "https://soundcloud.com/clxakz" },
-		{ title: "TikTok", icon: tiktok, url: "https://www.tiktok.com/@clxakz" },
+		// { title: "TikTok", icon: tiktok, url: "https://www.tiktok.com/@clxakz" },
+		{ title: "Discord", icon: discord, url: "https://discord.com/users/609106426341621781" },
 	];
 
 	useEffect(() => {
