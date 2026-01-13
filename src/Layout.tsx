@@ -1,6 +1,6 @@
 import Beams from "./components/Beams";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
-import Yeat from "./assets/yeat.png";
+import Pfp from "./assets/pfp.png";
 import ASCIIText from "./components/ASCIIText.tsx";
 import { motion } from "motion/react";
 import useIsMobile from "./hooks/useIsMobile";
@@ -12,6 +12,10 @@ import soundcloud from "./assets/soundcloud.svg";
 // import tiktok from "./assets/tiktok.svg";
 import discord from "./assets/discord.svg";
 import { ChevronRight } from "lucide-react";
+// import PrismaticBurst from "./components/PrismaticBurst.tsx";
+// import Galaxy from "./components/Galaxy.tsx";
+// import FaultyTerminal from "./components/FaultyTerminal.tsx";
+import GridMotion from "./components/GridMotion.tsx";
 
 export default function Layout() {
 	const isMobile = useIsMobile();
@@ -33,6 +37,8 @@ export default function Layout() {
 		// { title: "TikTok", icon: tiktok, url: "https://www.tiktok.com/@clxakz" },
 		{ title: "Discord", icon: discord, url: "discord://-/users/609106426341621781" },
 	];
+
+	const items = [<></>];
 
 	useEffect(() => {
 		if (!sessionStorage.getItem("first-load-reloaded")) {
@@ -61,8 +67,6 @@ export default function Layout() {
 					asciiFontSize={IntroTextSize.AsciiSize}
 					text="clxakz"
 				/>
-
-				{/* <h1 className="custom-font text-9xl">Clxakz</h1> */}
 			</motion.div>
 
 			<motion.div
@@ -71,7 +75,7 @@ export default function Layout() {
 				transition={{ delay: 3, duration: 1.5, ease: "easeIn" }}
 				className="absolute inset-0"
 			>
-				<Beams rotation={35} />
+				{isMobile ? <Beams rotation={35} /> : <GridMotion items={items} />}
 			</motion.div>
 
 			<motion.div
@@ -88,7 +92,7 @@ export default function Layout() {
 					className="flex flex-col items-center justify-center pt-10 select-none"
 				>
 					<Avatar className="size-20">
-						<AvatarImage src={Yeat} alt="pfp" />
+						<AvatarImage src={Pfp} alt="pfp" />
 						<AvatarFallback>CA</AvatarFallback>
 					</Avatar>
 
