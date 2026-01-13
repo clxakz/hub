@@ -38,7 +38,32 @@ export default function Layout() {
 		{ title: "Discord", icon: discord, url: "discord://-/users/609106426341621781" },
 	];
 
-	const items = [<></>];
+	const items = [
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat1.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat2.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat3.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat4.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat5.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat6.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat1.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat2.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat3.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat4.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat5.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat6.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat1.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat2.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat3.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat4.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat5.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat6.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat1.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat2.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat3.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat4.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat5.png",
+		"https://raw.githubusercontent.com/clxakz/hub/main/src/assets/images/yeat6.png",
+	];
 
 	useEffect(() => {
 		if (!sessionStorage.getItem("first-load-reloaded")) {
