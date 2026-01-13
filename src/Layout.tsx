@@ -31,7 +31,7 @@ export default function Layout() {
 		{ title: "Github", icon: github, url: "https://github.com/clxakz" },
 		{ title: "SoundCloud", icon: soundcloud, url: "https://soundcloud.com/clxakz" },
 		// { title: "TikTok", icon: tiktok, url: "https://www.tiktok.com/@clxakz" },
-		{ title: "Discord", icon: discord, url: "https://discord.com/users/609106426341621781" },
+		{ title: "Discord", icon: discord, url: "discord://-/users/609106426341621781" },
 	];
 
 	useEffect(() => {
